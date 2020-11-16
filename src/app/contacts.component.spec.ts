@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ContactsComponent } from './contacts.component';
 import { ContactService } from './contact.service';
 import { Observable, of } from 'rxjs';
@@ -35,7 +34,7 @@ describe('ContactsComponent', () => {
     };
 
     await TestBed.configureTestingModule({
-      declarations: [ ContactsComponent ],
+      declarations: [ ContactsComponent, ContactComponent ],
       providers: [{ provide: ContactService, useValue: contactServiceMock }]
     })
     .compileComponents();
