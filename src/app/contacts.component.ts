@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from './contact.service';
 
 @Component({
   selector: 'cnt-contacts',
   template: `
-    <p>
-      contacts works!
-    </p>
+    <ul>
+      <li *ngFor="let contact of (contactService.getContacts()|async)"><cnt-contact [contact]="contact"></cnt-contact></li>
+    </ul>
   `,
   styles: [
   ]
 })
 export class ContactsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public contactService: ContactService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
